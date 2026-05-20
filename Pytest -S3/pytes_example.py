@@ -3,3 +3,6 @@ def test_one():
     
 def test_two():
     print("This is test two")
+
+def test_three():
+    print("This is test three")
