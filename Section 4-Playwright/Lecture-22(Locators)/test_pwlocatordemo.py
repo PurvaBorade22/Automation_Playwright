@@ -13,28 +13,28 @@ def test_verify_locator(page:Page):
   
     
     # # # 2) page.get_by_text
-    # expect(page.get_by_text("Welcome to our store")).to_be_visible()    #full match
-    # expect(page.get_by_text("Welcome")).to_be_visible()                  #partial match
-    # expect(page.get_by_text(re.compile(".*Welcome.*"))).to_be_visible()             #regular expression
+    expect(page.get_by_text("Welcome to our store")).to_be_visible()    #full match
+    expect(page.get_by_text("Welcome")).to_be_visible()                  #partial match
+    expect(page.get_by_text(re.compile(".*Welcome.*"))).to_be_visible()             #regular expression
 
     # 3) page.get_by_role
-    # page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
-    # page.wait_for_timeout(5000)  # 500 ms = 5 secs
-    # expect(page.get_by_role("heading",name="Register")).to_be_visible()
+    page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
+    page.wait_for_timeout(5000)  # 500 ms = 5 secs
+    expect(page.get_by_role("heading",name="Register")).to_be_visible()
    
     # 4) page.get_by_label()
-    # page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
-    # page.get_by_label("First Name:").fill("Purva")
-    # page.get_by_label("Last Name:").fill("Borade")
-    # page.get_by_label("EMail:").fill("abc@gmail.com") 
-    # page.wait_for_timeout(5000)
+    page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
+    page.get_by_label("First Name:").fill("Purva")
+    page.get_by_label("Last Name:").fill("Borade")
+    page.get_by_label("EMail:").fill("abc@gmail.com") 
+    page.wait_for_timeout(5000)
     
     # 5) page.get_by_placeholder()
-    # page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
-    # page.get_by_placeholder("Search store").fill("Apple MacB0ook Pro")
-    # page.wait_for_timeout(5000)
-    # page.wait_for_load_state("networkidle")
-    # page.close()
+    page.goto("https://demo.nopcommerce.com/register?returnUrl=%2F")
+    page.get_by_placeholder("Search store").fill("Apple MacB0ook Pro")
+    page.wait_for_timeout(5000)
+    page.wait_for_load_state("networkidle")
+    page.close()
     
     # 6) page.get_by_title()
     page.goto("https://testautomationpractice.blogspot.com/p/playwrightpractice.html")
