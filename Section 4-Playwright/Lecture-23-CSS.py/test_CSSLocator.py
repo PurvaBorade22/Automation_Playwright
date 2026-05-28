@@ -13,6 +13,10 @@ def test_verify_css_locator(page:Page):
     # page.locator("#small-searchterms").fill("T-shirt")
     # page.wait_for_timeout(5000)
     
-    # 2) tag class - tag.class
-    page.locator("input.search-box-text").fill("T-shirt")
-    page.wait_for_timeout(5000)  
+    # # 2) tag class - tag.class
+    # page.locator("input.search-box-text").fill("T-shirt")
+    # page.wait_for_timeout(5000)  
+    
+    # 3) tag attribte - tag[attribute=value]
+    page.locator("input[name=q]").fill("T-shirt")
+    page.wait_for_timeout(5000)
