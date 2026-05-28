@@ -17,6 +17,10 @@ def test_verify_css_locator(page:Page):
     # page.locator("input.search-box-text").fill("T-shirt")
     # page.wait_for_timeout(5000)  
     
-    # 3) tag attribte - tag[attribute=value]
-    page.locator("input[name=q]").fill("T-shirt")
+    # # 3) tag attribte - tag[attribute=value]
+    # page.locator("input[name=q]").fill("T-shirt")
+    # page.wait_for_timeout(5000)
+    
+    # 4) tag.class[attibute=value]
+    page.locator("input.search-box-text[value='Search store']").fill("Custome T-shirt") #here we can use single quote inside double quote
     page.wait_for_timeout(5000)
