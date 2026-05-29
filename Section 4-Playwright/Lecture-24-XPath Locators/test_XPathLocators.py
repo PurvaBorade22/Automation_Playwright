@@ -29,5 +29,17 @@ def test_xpath_locators(page:Page):
     
     for i in product_titles:
         print(i)
-        
     
+    #5) xpath witn text - - is representing inner text of the element
+    registration_link = page.locator("//a[text()='Register']")
+    expect(registration_link).to_be_visible()
+    
+    # 6) xpath with last or first keywords
+    google_link=page.locator("//div[@class='column follow-us']//li[last()]")
+    expect(google_link).to_have_text("Google+")
+
+    # 7) xpath with position()
+    twiter_link =page.locator("//div[@class='column follow-us']//li[position()=2]")
+    expect(twiter_link).to_have_text("Twitter")  
+    
+
