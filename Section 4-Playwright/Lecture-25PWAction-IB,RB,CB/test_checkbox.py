@@ -27,5 +27,22 @@ def test_checkbox(page:Page):
     for checkbox in checkboxes:
         checkbox.check()
         expect(checkbox).to_be_checked()
-        page.wait_for_timeout(5000)    
+        page.wait_for_timeout(1000)    
         
+    # 4) check last 3 checkboxes
+    for checkbox in checkboxes[-3:]:
+        checkbox.uncheck()
+        expect(checkbox).not_to_be_checked()
+        page.wait_for_timeout(2000)
+        
+    # 5) checkedbox to unchecked and checked to uncheked - toggle checkboxes
+    for checkbox in checkboxes:
+        if checkbox.is_checked():
+            checkbox.uncheck()
+            expect(checkbox).not_to_be_checked()
+        else:
+            checkbox.check()
+            expect(checkbox).to_be_checked()
+            
+    page.wait_for_timeout(500)
+    
