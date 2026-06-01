@@ -24,25 +24,43 @@ def test_checkbox(page:Page):
     print("Total number of checkbox:",len(checkboxes))
     
     # 3) selecting all the checkbox
-    for checkbox in checkboxes:
-        checkbox.check()
-        expect(checkbox).to_be_checked()
-        page.wait_for_timeout(1000)    
+    # for checkbox in checkboxes:
+    #     checkbox.check()
+    #     expect(checkbox).to_be_checked()
+    #     page.wait_for_timeout(1000)    
         
     # 4) check last 3 checkboxes
-    for checkbox in checkboxes[-3:]:
-        checkbox.uncheck()
-        expect(checkbox).not_to_be_checked()
-        page.wait_for_timeout(2000)
+    # for checkbox in checkboxes[-3:]:
+    #     checkbox.uncheck()
+    #     expect(checkbox).not_to_be_checked()
+    #     page.wait_for_timeout(2000)
         
     # 5) checkedbox to unchecked and checked to uncheked - toggle checkboxes
-    for checkbox in checkboxes:
-        if checkbox.is_checked():
-            checkbox.uncheck()
-            expect(checkbox).not_to_be_checked()
-        else:
+    # for checkbox in checkboxes:
+    #     if checkbox.is_checked():
+    #         checkbox.uncheck()
+    #         expect(checkbox).not_to_be_checked()
+    #     else:
+    #         checkbox.check()
+    #         expect(checkbox).to_be_checked()
+            
+    # page.wait_for_timeout(500)
+    
+    # # 6) randomm checkbox select using indexing
+    # indexes = [1,3,6]
+    # for i in indexes:
+    #     checkboxes[i].check()
+    #     expect(checkboxes[i]).to_be_checked()
+        
+    # page.wait_for_timeout(2000)
+    
+    # 7) select checkbox based on the label/input value by choice
+    weekday = "Friday"
+    
+    for label in days:
+        if label==weekday:
+            checkbox = page.get_by_label(label)
             checkbox.check()
             expect(checkbox).to_be_checked()
             
-    page.wait_for_timeout(500)
-    
+    page.wait_for_timeout(2000)
